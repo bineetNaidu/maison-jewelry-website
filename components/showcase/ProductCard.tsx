@@ -19,7 +19,7 @@ export default function ProductCard({ gallery, title, sku, material, price, slug
       transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
       className="group relative flex w-full flex-col gap-6 md:w-[40vw] lg:w-[30vw] shrink-0"
     >
-      <Link href={`/products/${slug}`} className="flex flex-col gap-6 w-full cursor-none">
+      <Link href={`/products/${slug}`} data-cursor="view" className="flex flex-col gap-6 w-full cursor-none">
         {/* Image Container */}
         <div className="relative aspect-3/4 w-full overflow-hidden bg-[#0A0A0A]">
           {/* <div className="absolute inset-0 h-full w-full bg-[#111111] transition-transform duration-[1.5s] ease-luxury-slow group-hover:scale-105">

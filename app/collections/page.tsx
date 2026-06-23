@@ -87,7 +87,7 @@ export default function CollectionsPage() {
                     {collection.description}
                   </p>
                   
-                  <Link href={`/collections/${collection.slug}`} className="group flex items-center gap-4 font-mono text-xs uppercase tracking-[0.2em] transition-colors hover:text-white/60">
+                  <Link href={`/collections/${collection.slug}`} data-cursor="explore" className="group flex items-center gap-4 font-mono text-xs uppercase tracking-[0.2em] transition-colors hover:text-white/60 cursor-none">
                     <span className="border-b border-transparent group-hover:border-white/60 transition-colors">Explore Collection</span>
                     <span className="transition-transform duration-500 ease-luxury-slow group-hover:translate-x-2">→</span>
                   </Link>
