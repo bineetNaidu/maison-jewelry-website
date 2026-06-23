@@ -1,4 +1,17 @@
 // data/products.ts
+
+export interface Product {
+  id: string;
+  title: string;
+  sku: string;
+  material: string;
+  price: string;
+  slug: string;
+  collectionId: string;
+  featured: boolean;
+  gallery: string[];
+}
+
 export const products = [
     {
       id: "prod-01",
@@ -9,7 +22,7 @@ export const products = [
       slug: "obsidian-halo",
       collectionId: "obsidian-archive",
       featured: true,
-      gallery: ["placeholder", "placeholder", "placeholder"]
+      gallery: ["/assets/product-1-obsidian-halo.jpg", "placeholder", "placeholder"]
     },
     {
       id: "prod-02",
@@ -20,7 +33,7 @@ export const products = [
       slug: "the-monolith",
       collectionId: "obsidian-archive",
       featured: true,
-      gallery: ["placeholder", "placeholder", "placeholder"]
+      gallery: ["/assets/product-2-the-monolith.jpg", "placeholder", "placeholder"]
     },
     {
       id: "prod-03",
@@ -31,7 +44,7 @@ export const products = [
       slug: "fractured-light",
       collectionId: "bridal-paradox",
       featured: true,
-      gallery: ["placeholder", "placeholder", "placeholder"]
+      gallery: ["/assets/product-3-fractured-light.jpg", "placeholder", "placeholder"]
     },
     {
       id: "prod-04",
@@ -42,7 +55,7 @@ export const products = [
       slug: "eclipse-band",
       collectionId: "bridal-paradox",
       featured: true,
-      gallery: ["placeholder", "placeholder", "placeholder"]
+      gallery: ["/assets/product-4-eclipse-band.jpg", "placeholder", "placeholder"]
     }
   ];
   

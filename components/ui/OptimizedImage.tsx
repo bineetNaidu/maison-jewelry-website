@@ -12,13 +12,16 @@ interface OptimizedImageProps {
 }
 
 export default function OptimizedImage({ src, alt, className }: OptimizedImageProps) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(src !== "placeholder");
 
   return (
     <div className={`relative overflow-hidden bg-[#0A0A0A] ${className}`}>
       {/* Skeleton / Placeholder state */}
       <motion.div
-        animate={{ opacity: isLoading ? 1 : 0 }}
+        animate={{ 
+          opacity: src === "placeholder" ? 0 : isLoading ? 1 : 0,
+          pointerEvents: isLoading ? "auto" : "none",
+        }}
         transition={{ duration: 0.5 }}
         className="absolute inset-0 z-10 flex h-full w-full items-center justify-center border border-white/5 bg-[#111111]"
       >
@@ -42,8 +45,14 @@ export default function OptimizedImage({ src, alt, className }: OptimizedImagePr
           src={src}
           alt={alt}
           fill
-          className={`object-cover transition-transform duration-[2s] ease-luxury-slow hover:scale-105 ${isLoading ? "scale-110 blur-sm" : "scale-100 blur-0"}`}
+          className={`object-cover
+            transition-transform duration-[2s] ease-luxury-slow hover:scale-105
+            ${isLoading
+            ? "scale-110 blur-sm"
+            : "scale-100 blur-0"}
+            `}
           onLoad={() => setIsLoading(false)}
+          sizes="(max-width:768px) 100vw, 80vw"
         />
       )}
     </div>

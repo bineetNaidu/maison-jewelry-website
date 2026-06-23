@@ -1,21 +1,18 @@
 // components/showcase/ProductCard.tsx
 "use client";
 
+import { Product } from "@/data/products";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
-interface ProductCardProps {
+interface ProductCardProps extends Product {
   index: number;
-  title: string;
-  sku: string;
-  material: string;
-  price: string;
-  slug: string;
 }
 
-export default function ProductCard({ index, title, sku, material, price, slug }: ProductCardProps) {
+export default function ProductCard({ gallery, title, sku, material, price, slug }: ProductCardProps) {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -25,7 +22,7 @@ export default function ProductCard({ index, title, sku, material, price, slug }
       <Link href={`/products/${slug}`} className="flex flex-col gap-6 w-full cursor-none">
         {/* Image Container */}
         <div className="relative aspect-3/4 w-full overflow-hidden bg-[#0A0A0A]">
-          <div className="absolute inset-0 h-full w-full bg-[#111111] transition-transform duration-[1.5s] ease-luxury-slow group-hover:scale-105">
+          {/* <div className="absolute inset-0 h-full w-full bg-[#111111] transition-transform duration-[1.5s] ease-luxury-slow group-hover:scale-105">
             <div className="flex h-full w-full flex-col items-center justify-center p-8 text-center border border-white/5">
               <span className="font-mono text-[10px] uppercase tracking-widest text-white/30">
                 Insert AI Image
@@ -34,7 +31,14 @@ export default function ProductCard({ index, title, sku, material, price, slug }
                 Aspect Ratio 3:4
               </span>
             </div>
-          </div>
+          </div> */}
+          <Image
+            src={gallery[0]}
+            alt={`${title}'s products image`}
+            fill
+            className="object-cover"
+            priority={false}
+          />
         </div>
 
         {/* Metadata & Typography */}

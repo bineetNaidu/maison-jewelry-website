@@ -4,6 +4,7 @@
 import { Easing, motion } from "framer-motion";
 import Link from "next/link";
 import { collections } from "@/data/collections";
+import Image from "next/image";
 
 export default function CollectionsPage() {
   const ease: Easing = [0.76, 0, 0.24, 1];
@@ -52,11 +53,18 @@ export default function CollectionsPage() {
                 className={`relative w-full overflow-hidden bg-[#0A0A0A] md:w-[60%] ${collection.imageAspectRatio}`}
               >
                 {/* PLACEHOLDER FOR NEXT/IMAGE */}
-                <div className="flex h-full w-full flex-col items-center justify-center border border-white/5 bg-[#111111] transition-transform duration-[1.5s] ease-luxury-slow hover:scale-105 cursor-none">
+                {/* <div className="flex h-full w-full flex-col items-center justify-center border border-white/5 bg-[#111111] transition-transform duration-[1.5s] ease-luxury-slow hover:scale-105 cursor-none">
                   <span className="font-mono text-[10px] uppercase tracking-widest text-white/30">
                     Insert Collection Image
                   </span>
-                </div>
+                </div> */}
+                <Image
+                  src={collection.gallery[0]}
+                  alt={`${collection.title}'s gallery image`}
+                  fill
+                  className="object-cover"
+                  priority={false}
+                />
               </motion.div>
 
               {/* Typography Block */}

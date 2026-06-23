@@ -2,6 +2,7 @@
 "use client";
 
 import { Easing, motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Editorial() {
   const ease: Easing | Easing[] = [0.76, 0, 0.24, 1];
@@ -41,14 +42,21 @@ export default function Editorial() {
           className="relative aspect-video w-full overflow-hidden bg-[#0A0A0A] md:w-[80%] md:self-end"
         >
           {/* REPLACE WITH NEXT/IMAGE LATER */}
-          <div className="flex h-full w-full flex-col items-center justify-center border border-white/5 bg-[#111111]">
+          {/* <div className="flex h-full w-full flex-col items-center justify-center border border-white/5 bg-[#111111]">
              <span className="font-mono text-[10px] uppercase tracking-widest text-white/30">
               Insert AI Image
             </span>
             <span className="mt-2 font-serif text-sm italic text-white/20">
               Aspect Ratio 16:9
             </span>
-          </div>
+          </div> */}
+            <Image
+              src="/assets/editorial-raw-charcoal.jpg"
+              alt="Editorial jewelry photography"
+              fill
+              className="object-cover"
+              priority={false}
+            />
         </motion.div>
 
         {/* Bottom Text Block */}

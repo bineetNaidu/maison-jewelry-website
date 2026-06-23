@@ -9,7 +9,7 @@ export const collections = [
     imageAspectRatio: "aspect-video",
     materials: "Titanium / Obsidian / Black Rhodium",
     startingPrice: "From $3,800", // Updated to reflect the lowest product price
-    gallery: ["placeholder", "placeholder", "placeholder"] // Used for editorial collection imagery
+    gallery: ["/assets/archive-1-the-obsidian-archive.jpg", "placeholder", "placeholder"] // Used for editorial collection imagery
   },
   {
     id: "bridal-paradox",
@@ -20,7 +20,7 @@ export const collections = [
     imageAspectRatio: "aspect-[4/3]",
     materials: "950 Platinum / 18k Gold / VVS1 Diamonds",
     startingPrice: "Bespoke Only",
-    gallery: ["placeholder", "placeholder", "placeholder"]
+    gallery: ["/assets/archive-2-the-bridal-paradox.jpg", "placeholder", "placeholder"]
   }
 ];
 

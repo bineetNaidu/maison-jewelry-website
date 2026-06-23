@@ -67,21 +67,21 @@ const Tenets = () => {
       title: "REJECT PERFECTION",
       text: "Machine precision is sterile. True luxury exists in the scar, the hammer mark, the asymmetry of nature. We leave the fingerprints of the forge on every piece.",
       bg: "bg-[#050505]",
-      img: "placeholder"
+      img: "/assets/texture-1-reject-perfection.jpg"
     },
     {
       id: "02",
       title: "GRAVITY & WEIGHT",
       text: "A piece of significance should be felt. We use maximum material density. Titanium, platinum, and pure gold in brutal, heavy proportions.",
       bg: "bg-[#0A0A0A]",
-      img: "placeholder"
+      img: "/assets/texture-1-reject-perfection.jpg"
     },
     {
       id: "03",
       title: "ETERNAL ENDURANCE",
       text: "Trends die. Flesh ages. The artifact remains. We design for the year 3000, creating relics that will be dug out of the earth by future generations.",
       bg: "bg-[#111111]",
-      img: "placeholder"
+      img: "/assets/texture-1-reject-perfection.jpg"
     }
   ];
 

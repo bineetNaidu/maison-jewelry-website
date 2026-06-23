@@ -73,20 +73,20 @@ const ZeroGravityParallax = () => {
         Notice how left/right and widths are explicitly changed for mobile vs md.
         This prevents overlapping on 390px screens.
       */}
-      <motion.div style={{ y: y1 }} className="absolute left-4 top-[5%] w-[45vw] md:left-[10%] md:top-[20%] md:w-[20vw] aspect-3/4 will-change-transform">
-        <OptimizedImage src="placeholder" alt="Zero Gravity 1" />
+     <motion.div style={{ y: y1 }} className="absolute left-4 top-[5%] w-[45vw] md:left-[10%] md:top-[20%] md:w-[20vw] aspect-3/4 will-change-transform">
+        <OptimizedImage src="/assets/floating-image-1.jpg" alt="Zero Gravity 1" className="h-full w-full" />
       </motion.div>
 
       <motion.div style={{ y: y2 }} className="absolute right-4 top-[25%] w-[50vw] md:right-[10%] md:top-[10%] md:w-[25vw] aspect-square will-change-transform">
-        <OptimizedImage src="placeholder" alt="Zero Gravity 2" />
+        <OptimizedImage src="/assets/floating-image-2.jpg" alt="Zero Gravity 2" className="h-full w-full" />
       </motion.div>
 
       <motion.div style={{ y: y3 }} className="absolute left-8 top-[55%] w-[60vw] md:left-[20%] md:top-[60%] md:w-[30vw] aspect-video will-change-transform">
-        <OptimizedImage src="placeholder" alt="Zero Gravity 3" />
+        <OptimizedImage src="/assets/floating-image-3.jpg" alt="Zero Gravity 3" className="h-full w-full" />
       </motion.div>
 
       <motion.div style={{ y: y4 }} className="absolute right-8 top-[75%] w-[40vw] md:right-[20%] md:top-[70%] md:w-[15vw] aspect-4/5 will-change-transform">
-        <OptimizedImage src="placeholder" alt="Zero Gravity 4" />
+        <OptimizedImage src="/assets/floating-image-4.jpg" alt="Zero Gravity 4" className="h-full w-full" />
       </motion.div>
     </div>
   );
@@ -131,7 +131,7 @@ const Centerpiece = () => {
     <div ref={containerRef} className="relative h-[300vh] md:h-[400vh] w-full bg-black">
       <div className="sticky top-0 h-screen w-full">
         <div className="absolute inset-0 z-0 opacity-40">
-           <OptimizedImage src="placeholder" alt="The Masterpiece" className="h-full w-full object-cover" />
+           <OptimizedImage src="/assets/the-masterpiece.jpg" alt="The Masterpiece" className="h-full w-full object-cover" />
            <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-black" />
         </div>
 

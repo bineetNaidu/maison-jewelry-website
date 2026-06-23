@@ -52,42 +52,61 @@ const BespokeProcess = () => {
     const ease: Easing = [0.76, 0, 0.24, 1];
     
     const steps = [
-      { num: "01", title: "Consultation", desc: "An intimate dialogue to understand the architecture of your vision, your materials, and the legacy the piece will hold." },
-      { num: "02", title: "Sourcing", desc: "We scour the globe for stones that speak. We do not look for perfection on paper; we look for character, fire, and violence in the cut." },
-      { num: "03", title: "The Forge", desc: "Months of uncompromising labor in our Parisian atelier. Gold is scarred. Platinum is hammered. The artifact takes its final form." },
-      { num: "04", title: "Delivery", desc: "The piece is presented in a custom-machined obsidian vault, accompanied by its original charcoal blueprints." }
+      { num: "01", title: "Consultation", desc: "An intimate dialogue to understand the architecture of your vision, your materials, and the legacy the piece will hold.", image: "/assets/step-1-consultation.jpg" },
+      { num: "02", title: "Sourcing", desc: "We scour the globe for stones that speak. We do not look for perfection on paper; we look for character, fire, and violence in the cut.", image: "/assets/step-2-sourcing.jpg" },
+      { num: "03", title: "The Forge", desc: "Months of uncompromising labor in our Parisian atelier. Gold is scarred. Platinum is hammered. The artifact takes its final form.", image: "/assets/step-3-the-forge.jpg" },
+      { num: "04", title: "Delivery", desc: "The piece is presented in a custom-machined obsidian vault, accompanied by its original charcoal blueprints.", image: "/assets/step-4-delivery.jpg" }
     ];
+
+    const [activeImage, setActiveImage] = useState(steps[0].image);
   
     return (
       <div className="relative w-full bg-black py-24 text-white md:py-48">
         <div className="flex flex-col md:flex-row">
           
-          {/* Desktop Only: Sticky Image Crossfade */}
-          <div className="relative hidden w-full md:block md:w-1/2">
+         {/* Desktop Only: Sticky Image Crossfade */}
+         <div className="relative hidden w-full md:block md:w-1/2">
             <div className="sticky top-0 flex h-screen items-center justify-center p-12">
                <div className="relative aspect-3/4 w-full max-w-md overflow-hidden bg-[#050505]">
-                  <OptimizedImage src="placeholder" alt="The Process" className="h-full w-full" />
-                  <div className="absolute inset-0 flex items-center justify-center border border-white/10 pointer-events-none">
+                  
+                  {/* CHANGED: Map all images and crossfade their opacity for a luxurious transition */}
+                  {steps.map((step) => (
+                    <motion.div
+                      key={step.num}
+                      initial={false}
+                      animate={{ 
+                        opacity: activeImage === step.image ? 1 : 0,
+                        scale: activeImage === step.image ? 1 : 1.05 // Subtle scale-down effect as it fades in
+                      }}
+                      transition={{ duration: 1.2, ease }}
+                      className="absolute inset-0 h-full w-full"
+                    >
+                      <OptimizedImage src={step.image} alt={step.title} className="h-full w-full" />
+                    </motion.div>
+                  ))}
+
+                  <div className="absolute inset-0 z-10 flex items-center justify-center border border-white/10 pointer-events-none">
                     <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/30">Atelier Archives</span>
                   </div>
                </div>
             </div>
           </div>
   
-          {/* Both: Scrolling Steps (With interleaved images for mobile) */}
-          <div className="flex w-full flex-col px-6 md:w-1/2 md:px-24 md:py-[50vh]">
+         {/* Both: Scrolling Steps (With interleaved images for mobile) */}
+         <div className="flex w-full flex-col px-6 md:w-1/2 md:px-24 md:py-[50vh]">
             {steps.map((step, i) => (
               <motion.div 
                 key={step.num}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ margin: "-10% 0px -10% 0px", once: true }}
+                viewport={{ margin: "-40% 0px -40% 0px" }}
+                onViewportEnter={() => setActiveImage(step.image)}
                 transition={{ duration: 0.8, ease }}
                 className="mb-24 flex flex-col gap-6 last:mb-0 md:mb-64"
               >
                 {/* MOBILE ONLY: Editorial Image interleaved before the text */}
                 <div className="relative aspect-square w-full overflow-hidden bg-[#050505] md:hidden mb-4">
-                   <OptimizedImage src="placeholder" alt={step.title} className="h-full w-full" />
+                   <OptimizedImage src={step.image} alt={step.title} className="h-full w-full" />
                 </div>
   
                 <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/40 border-b border-white/10 pb-4 w-fit">
