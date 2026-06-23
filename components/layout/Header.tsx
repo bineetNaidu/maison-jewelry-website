@@ -12,7 +12,7 @@ export default function Header() {
     <>
       <header className="fixed left-0 top-0 z-50 flex w-full items-center justify-between px-6 py-8 md:px-12 mix-blend-difference">
         <Link href="/" className="z-50 text-xl font-medium tracking-[0.2em] text-white uppercase">
-          Maison Jewelry
+          Maison
         </Link>
 
         {/* Desktop Nav */}
@@ -33,9 +33,9 @@ export default function Header() {
           className="z-50 flex flex-col items-end justify-center gap-[6px] p-2 md:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <span className={`h-[1px] bg-white transition-all duration-500 ${isMobileMenuOpen ? "w-6 translate-y-[7px] rotate-45" : "w-8"}`} />
-          <span className={`h-[1px] bg-white transition-all duration-500 ${isMobileMenuOpen ? "w-0 opacity-0" : "w-6"}`} />
-          <span className={`h-[1px] bg-white transition-all duration-500 ${isMobileMenuOpen ? "w-6 -translate-y-[7px] -rotate-45" : "w-4"}`} />
+          <span className={`h-px bg-white transition-all duration-500 ${isMobileMenuOpen ? "w-6 translate-y-[7px] rotate-45" : "w-8"}`} />
+          <span className={`h-px bg-white transition-all duration-500 ${isMobileMenuOpen ? "w-0 opacity-0" : "w-6"}`} />
+          <span className={`h-px bg-white transition-all duration-500 ${isMobileMenuOpen ? "w-6 translate-y-[-7px] -rotate-45" : "w-4"}`} />
         </button>
       </header>
 
