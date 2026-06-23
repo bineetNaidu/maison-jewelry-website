@@ -5,6 +5,8 @@ import "./globals.css";
 import CustomCursor from "@/components/cursor/CustomCursor";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SmoothScroll from "@/components/layout/SmoothScroll";
+import Loader from "@/components/layout/Loader";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -37,10 +39,13 @@ export default function RootLayout({
           `min-h-screen bg-background font-serif text-foreground antialiased selection:bg-white selection:text-black ${cormorant.variable}
             ${spaceMono.variable}`}
       >
-        <CustomCursor />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <SmoothScroll>
+          <Loader />
+          <CustomCursor />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );
