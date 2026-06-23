@@ -7,6 +7,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import Loader from "@/components/layout/Loader";
+import NoiseOverlay from "@/components/ui/NoiseOverlay";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
             ${spaceMono.variable}`}
       >
         <SmoothScroll>
+          <NoiseOverlay />
           <Loader />
           <CustomCursor />
           <Header />
