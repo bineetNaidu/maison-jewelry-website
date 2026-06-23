@@ -1,25 +1,86 @@
 // components/hero/BackgroundVideo.tsx
 "use client";
 
+import { useRef, useState, useEffect } from "react";
+
 export default function BackgroundVideo() {
-  // We use a playlist parameter equal to the video ID to force looping on YouTube iframes
-  // Replace 'YOUTUBE_VIDEO_ID' with your actual cinematic b-roll video ID later.
-  // Using a dark, abstract placeholder ID here for visual testing.
-  const videoId = "rZ5pB4E6B3s"; 
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true); // Optimistically assume autoplay works
+
+  const toggleAudio = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+      
+      // If the user unmutes, ensure the video is actually playing
+      if (!isPlaying) {
+        videoRef.current.play();
+      }
+    }
+  };
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+    }
+  };
 
   return (
     <div className="absolute inset-0 z-0 h-full w-full overflow-hidden bg-black">
-      {/* Dark overlay to ensure text readability and brutalist mood */}
-      <div className="absolute inset-0 z-10 bg-black/40 mix-blend-multiply" />
+      {/* Dark overlay to ensure text readability */}
+      <div className="absolute inset-0 z-10 bg-black/40 mix-blend-multiply pointer-events-none" />
       
-      <iframe
-        className="pointer-events-none absolute left-1/2 top-1/2 min-h-[120vw] min-w-[120vw] -translate-x-1/2 -translate-y-1/2 opacity-60 md:min-h-[100vw] md:min-w-screen"
-        src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&playsinline=1&playlist=${videoId}&vq=hd1080`}
-        title="Background Video"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
+      <video
+        ref={videoRef}
+        autoPlay
+        loop
+        playsInline
+        // Sync React state with actual browser media events
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        className="absolute inset-0 h-full w-full object-cover opacity-60"
+        src="/assets/hero-cinematic.mp4"
       />
+
+      {/* Brutalist Control Panel */}
+      {/* LEFT SIDE: Playback Control */}
+      <div className="absolute bottom-6 left-4 z-50 md:bottom-12 md:left-12 env-safe-padding">
+        <button
+          onClick={togglePlay}
+          className="group relative flex h-10 w-24 items-center justify-center border border-white/20 bg-black/20 backdrop-blur-md transition-all duration-500 hover:border-white hover:bg-white md:h-12 md:w-28 cursor-none"
+        >
+          <span className="font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-white transition-colors group-hover:text-black md:text-[10px]">
+            {isPlaying ? "Pause" : "Play"}
+          </span>
+        </button>
+      </div>
+
+      {/* RIGHT SIDE: Audio Control */}
+      <div className="absolute bottom-6 right-4 z-50 md:bottom-12 md:right-12 env-safe-padding">
+        <button
+          onClick={toggleAudio}
+          className="group relative flex h-10 w-32 items-center justify-center gap-3 border border-white/20 bg-black/20 backdrop-blur-md transition-all duration-500 hover:border-white hover:bg-white md:h-12 md:w-36 cursor-none"
+        >
+          <span className="font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-white transition-colors group-hover:text-black md:text-[10px]">
+            {isMuted ? "Sound: Off" : "Sound: On"}
+          </span>
+          <div className="relative flex h-1.5 w-1.5 items-center justify-center">
+            {isMuted ? (
+              <span className="absolute h-[1px] w-full bg-white/50 transition-colors group-hover:bg-black/50" />
+            ) : (
+              <>
+                <span className="absolute h-full w-full animate-ping rounded-full bg-white opacity-75 group-hover:bg-black" />
+                <span className="relative h-1.5 w-1.5 rounded-full bg-white group-hover:bg-black" />
+              </>
+            )}
+          </div>
+        </button>
+      </div>
     </div>
   );
 }
