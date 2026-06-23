@@ -65,7 +65,7 @@ export default function CollectionDetailPage() {
               
               <div className="flex flex-col gap-2">
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">Pricing</span>
-                <span className="font-mono text-xs uppercase tracking-widest">{collection.price}</span>
+                <span className="font-mono text-xs uppercase tracking-widest">{collection.startingPrice}</span>
               </div>
 
               <p className="font-mono text-sm leading-relaxed text-white/60 max-w-md mt-4">

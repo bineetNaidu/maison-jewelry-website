@@ -4,13 +4,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import ProductCard from "./ProductCard";
-
-const products = [
-  { title: "Obsidian Halo", sku: "COL-01-OH", material: "18K Gold / Obsidian" },
-  { title: "Fractured Light", sku: "COL-01-FL", material: "Platinum / Diamond" },
-  { title: "The Monolith", sku: "COL-01-TM", material: "Matte Black Titanium" },
-  { title: "Eclipse Band", sku: "COL-01-EB", material: "18K White Gold" },
-];
+import { getFeaturedProducts } from "@/data/products";
 
 export default function ProductShowcase() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -19,6 +13,8 @@ export default function ProductShowcase() {
   const { scrollYProgress } = useScroll({
     target: containerRef,
   });
+
+  const featuredProducts = getFeaturedProducts();
 
   // Translate vertical scroll into horizontal movement. 
   // -60% ensures we scroll far enough to see the last item without scrolling off-screen entirely.
@@ -34,7 +30,7 @@ export default function ProductShowcase() {
         <div className="mb-12">
           <h2 className="font-serif text-5xl tracking-tighter">SELECTED<br />WORKS</h2>
         </div>
-        {products.map((product, i) => (
+        {featuredProducts.map((product, i) => (
           <ProductCard key={product.sku} index={i} {...product} />
         ))}
       </div>
@@ -58,7 +54,7 @@ export default function ProductShowcase() {
             </div>
 
             {/* Product Cards */}
-            {products.map((product, i) => (
+            {featuredProducts.map((product, i) => (
               <ProductCard key={product.sku} index={i} {...product} />
             ))}
             
