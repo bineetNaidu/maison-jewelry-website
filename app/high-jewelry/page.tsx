@@ -22,7 +22,7 @@ const MaskedHero = () => {
   const opacity = useTransform(scrollYProgress, [0.8, 1], [1, 0]);
 
   return (
-    <div ref={containerRef} className="relative h-[300vh] w-full bg-black">
+    <div ref={containerRef} className="relative h-[175vh] w-full bg-black">
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
           <BackgroundVideo />
@@ -58,7 +58,7 @@ const ZeroGravityParallax = () => {
   const y4 = useTransform(scrollYProgress, [0, 1], ["10%", "-80%"]);
 
   return (
-    <div ref={containerRef} className="relative h-[250vh] w-full overflow-hidden bg-black py-32">
+    <div ref={containerRef} className="relative h-[150vh] w-full overflow-hidden bg-black py-32">
       <div className="sticky top-1/2 z-10 flex -translate-y-1/2 flex-col items-center justify-center text-center mix-blend-difference pointer-events-none px-4">
         <span className="mb-6 font-mono text-[10px] uppercase tracking-[0.4em] text-white/50">
           The Vault
@@ -128,7 +128,7 @@ const Centerpiece = () => {
   const opacity3 = useTransform(scrollYProgress, [0.6, 0.8, 1], [0, 1, 1]);
 
   return (
-    <div ref={containerRef} className="relative h-[300vh] md:h-[400vh] w-full bg-black">
+    <div ref={containerRef} className="relative h-[200vh] md:h-[225vh] w-full bg-black">
       <div className="sticky top-0 h-screen w-full">
         <div className="absolute inset-0 z-0 opacity-40">
            <OptimizedImage src="/assets/the-masterpiece.jpg" alt="The Masterpiece" className="h-full w-full object-cover" />
