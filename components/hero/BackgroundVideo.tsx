@@ -71,11 +71,11 @@ export default function BackgroundVideo() {
           </span>
           <div className="relative flex h-1.5 w-1.5 items-center justify-center">
             {isMuted ? (
-              <span className="absolute h-[1px] w-full bg-white/50 transition-colors group-hover:bg-black/50" />
+              <span className="absolute h-px w-full bg-white/50 transition-colors group-hover:bg-black/50" />
             ) : (
               <>
-                <span className="absolute h-full w-full animate-ping rounded-full bg-white opacity-75 group-hover:bg-black" />
-                <span className="relative h-1.5 w-1.5 rounded-full bg-white group-hover:bg-black" />
+                <span className="absolute h-full w-full animate-ping rounded-full bg-gold opacity-75 group-hover:bg-black" />
+                <span className="relative h-1.5 w-1.5 rounded-full bg-gold group-hover:bg-black" />
               </>
             )}
           </div>

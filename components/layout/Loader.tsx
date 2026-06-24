@@ -78,7 +78,7 @@ export default function Loader() {
             y: "-100%", 
             transition: { duration: 1.4, ease: [0.76, 0, 0.24, 1], delay: 0.2 } 
           }}
-          className="fixed inset-0 z-[9999] flex flex-col justify-between bg-black p-8 text-white md:p-16"
+          className="fixed inset-0 z-9999 flex flex-col justify-between bg-black p-8 text-white md:p-16"
         >
           {/* Top Metadata */}
           <div className="flex w-full justify-between font-mono text-[9px] uppercase tracking-[0.2em] text-white/30">
@@ -120,7 +120,7 @@ export default function Loader() {
           <div className="relative w-full pb-2">
             <div className="absolute bottom-0 left-0 h-px bg-white/10 w-full" />
             <motion.div 
-              className="absolute bottom-0 left-0 h-px bg-white origin-left"
+              className={`absolute bottom-0 left-0 h-px w-full origin-left transition-colors duration-500 ${progress >= 100 ? 'bg-gold' : 'bg-white'}`}
               style={{ scaleX: progress / 100 }}
               transition={{ ease: "easeInOut" }}
             />

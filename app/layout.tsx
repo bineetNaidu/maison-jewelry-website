@@ -39,7 +39,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body
         className={
-          `min-h-screen bg-background font-serif text-foreground antialiased selection:bg-white selection:text-black ${tenorSans.variable}
+          `min-h-screen bg-background font-serif text-foreground antialiased selection:bg-gold selection:text-black ${tenorSans.variable}
             ${dmMono.variable}`}
       >
         <SmoothScroll>

@@ -66,8 +66,14 @@ export default function CustomCursor() {
         className="absolute inset-0 rounded-full"
         animate={{
           scale: cursorText ? 3 : isHovering ? 2.5 : 1,
-          backgroundColor: isHovering || cursorText ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 0)",
-          border: isHovering || cursorText ? "none" : "1px solid rgba(255, 255, 255, 0.5)",
+          backgroundColor: cursorText 
+            ? "rgba(255, 255, 255, 1)" 
+            : isHovering 
+              ? "var(--color-gold)" 
+              : "rgba(255, 255, 255, 0)",
+          border: isHovering || cursorText 
+            ? "none" 
+            : "1px solid rgba(255, 255, 255, 0.5)",
         }}
         transition={{ duration: 0.3, ease: "backOut" }}
       />
