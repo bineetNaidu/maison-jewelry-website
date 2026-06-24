@@ -74,14 +74,14 @@ const Tenets = () => {
       title: "GRAVITY & WEIGHT",
       text: "A piece of significance should be felt. We use maximum material density. Titanium, platinum, and pure gold in brutal, heavy proportions.",
       bg: "bg-[#0A0A0A]",
-      img: "/assets/texture-1-reject-perfection.jpg"
+      img: "/assets/texture-2-gravity-weight.jpg"
     },
     {
       id: "03",
       title: "ETERNAL ENDURANCE",
       text: "Trends die. Flesh ages. The artifact remains. We design for the year 3000, creating relics that will be dug out of the earth by future generations.",
       bg: "bg-[#111111]",
-      img: "/assets/texture-1-reject-perfection.jpg"
+      img: "/assets/texture-3-eternal-endurance.jpg"
     }
   ];
 

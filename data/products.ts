@@ -22,7 +22,7 @@ export const products = [
       slug: "obsidian-halo",
       collectionId: "obsidian-archive",
       featured: true,
-      gallery: ["/assets/product-1-obsidian-halo.jpg", "placeholder", "placeholder"]
+      gallery: ["/assets/product-1-obsidian-halo.jpg", "/assets/product-1-obsidian-halo-1.2.jpg", "/assets/product-1-obsidian-halo-1.3.jpg"]
     },
     {
       id: "prod-02",
@@ -33,7 +33,7 @@ export const products = [
       slug: "the-monolith",
       collectionId: "obsidian-archive",
       featured: true,
-      gallery: ["/assets/product-2-the-monolith.jpg", "placeholder", "placeholder"]
+      gallery: ["/assets/product-2-the-monolith.jpg", "/assets/product-2-the-monolith-1.2.jpg", "/assets/product-2-the-monolith-1.3.jpg"]
     },
     {
       id: "prod-03",
@@ -44,7 +44,7 @@ export const products = [
       slug: "fractured-light",
       collectionId: "bridal-paradox",
       featured: true,
-      gallery: ["/assets/product-3-fractured-light.jpg", "placeholder", "placeholder"]
+      gallery: ["/assets/product-3-fractured-light.jpg", "/assets/product-3-fractured-light-1.2.jpg", "/assets/product-3-fractured-light-1.3.jpg"]
     },
     {
       id: "prod-04",
@@ -55,7 +55,7 @@ export const products = [
       slug: "eclipse-band",
       collectionId: "bridal-paradox",
       featured: true,
-      gallery: ["/assets/product-4-eclipse-band.jpg", "placeholder", "placeholder"]
+      gallery: ["/assets/product-4-eclipse-band.jpg", "/assets/product-4-eclipse-band-1.2.jpg", "/assets/product-4-eclipse-band-1.3.jpg"]
     }
   ];
   
