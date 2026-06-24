@@ -12,8 +12,8 @@
   --color-border: #1a1a1a;
 
   /* Fonts */
-  --font-serif: var(--font-cormorant), serif;
-  --font-mono: var(--font-space-mono), monospace;
+  --font-serif: var(--font-luxury), serif;
+  --font-mono: var(--font-mono), monospace;
 
   /* Easing */
   --ease-luxury-slow: cubic-bezier(0.76, 0, 0.24, 1);

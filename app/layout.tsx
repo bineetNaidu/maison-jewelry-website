@@ -1,6 +1,6 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Space_Mono } from "next/font/google";
+import { Tenor_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/cursor/CustomCursor";
 import Header from "@/components/layout/Header";
@@ -9,17 +9,19 @@ import SmoothScroll from "@/components/layout/SmoothScroll";
 import Loader from "@/components/layout/Loader";
 import NoiseOverlay from "@/components/ui/NoiseOverlay";
 
-const cormorant = Cormorant_Garamond({
+// Premium High-Fashion Primary Sans-Serif
+const tenorSans = Tenor_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-cormorant",
+  weight: ["400"],
+  variable: "--font-luxury",
   display: "swap",
 });
 
-const spaceMono = Space_Mono({
+// Sleek, Geometric Brutalist Monospace
+const dmMono = DM_Mono({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
+  weight: ["300", "400", "500"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -37,8 +39,8 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body
         className={
-          `min-h-screen bg-background font-serif text-foreground antialiased selection:bg-white selection:text-black ${cormorant.variable}
-            ${spaceMono.variable}`}
+          `min-h-screen bg-background font-serif text-foreground antialiased selection:bg-white selection:text-black ${tenorSans.variable}
+            ${dmMono.variable}`}
       >
         <SmoothScroll>
           <NoiseOverlay />
