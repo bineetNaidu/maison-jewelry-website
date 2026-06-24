@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MAISON | High Jewelry Atelier
+
+**Maison** is a digital-first luxury jewelry atelier. This project serves as a high-fidelity showcase for bespoke craftsmanship, featuring a brutalist-inspired interface, cinematic interactive experiences, and an editorial-grade web architecture.
+
+## The Vision
+
+Maison represents the intersection of rigid architectural discipline and the fluid, rare nature of high jewelry. The digital experience is designed to mirror the physical atelier: precise, quiet, and uncompromising.
+
+### Core Philosophy
+
+* **Brutalist Restraint:** A monochromatic, high-contrast visual language that puts the product at the center.
+* **Kinetic Editorial:** Seamless scroll-triggered animation sequences that mimic the reveal of a physical masterpiece.
+* **High-Fidelity Performance:** Optimized asset loading and hardware-accelerated transitions that ensure a premium experience on both high-end workstations and mobile devices.
+
+## Technical Stack
+
+This project is built for performance and scale using the latest Next.js 16 stack:
+
+* **Framework:** [Next.js](https://nextjs.org) (App Router)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com) (v4)
+* **Animation:** [Framer Motion](https://www.google.com/search?q=https://framer.motion)
+* **Typography:** Custom font-stack utilizing *Tenor Sans* and *DM Mono*
+* **Deployment:** Vercel
+
+## Project Structure Highlights
+
+* `components/hero/` — Cinematic background engines and native video controllers.
+* `components/layout/` — Global architectural components (Loader, Header, Footer, Smooth Scroll).
+* `components/cursor/` — Custom high-fidelity interactive pointer system.
+* `app/high-jewelry/` — Complex parallax and scroll-linked animation sequences.
 
 ## Getting Started
 
-First, run the development server:
-
+1. **Clone the repository**
+2. **Install dependencies**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm install
 
-## Learn More
+```
+3. **Run the development server**
+   ```bash
+npm run dev
 
-To learn more about Next.js, take a look at the following resources:
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **View the Atelier**
+Open [http://localhost:3000](https://www.google.com/search?q=http%3A%2F%2Flocalhost%3A3000) with your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Philosophy of Design
 
-## Deploy on Vercel
+The Maison brand identity is defined by "The Invisible Hand." Every interaction—from the custom cursor morphing on hover to the deliberate, heavy pacing of our preloader—is designed to slow the user down. We treat the browser window as an art gallery frame, ensuring that the technology powering the site remains invisible, letting the jewelry—the "Objects of Eternity"—command the attention.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* “No compromise. No repetition.”*
+
+---
