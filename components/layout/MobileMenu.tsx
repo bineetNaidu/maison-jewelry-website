@@ -13,7 +13,7 @@ const links = [
   { name: "Collections", href: "/collections" },
   { name: "High Jewelry", href: "/high-jewelry" },
   { name: "Bespoke", href: "/bespoke" },
-  { name: "Maison", href: "/" },
+  { name: "Manifesto", href: "/manifesto" },
 ];
 
 export default function MobileMenu({ isOpen, setIsOpen }: MobileMenuProps) {

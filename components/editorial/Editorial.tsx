@@ -3,6 +3,7 @@
 
 import { Easing, motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Editorial() {
   const ease: Easing | Easing[] = [0.76, 0, 0.24, 1];
@@ -78,10 +79,10 @@ export default function Editorial() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, ease, delay: 0.2 }}
           >
-            <button className="group flex items-center gap-4 border-b border-white pb-2 font-mono text-xs uppercase tracking-[0.2em] transition-colors hover:text-white/60 hover:border-white/60">
+            <Link href='/manifesto' className="group flex items-center gap-4 border-b border-white pb-2 font-mono text-xs uppercase tracking-[0.2em] transition-colors hover:text-white/60 hover:border-white/60">
               <span>Read the Manifesto</span>
               <span className="transition-transform duration-500 ease-luxury-slow group-hover:translate-x-2">→</span>
-            </button>
+            </Link>
           </motion.div>
         </div>
 
